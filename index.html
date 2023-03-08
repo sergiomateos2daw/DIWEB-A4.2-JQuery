@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 4.2</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        $(document).ready(function () {
+            // Configuración
+            var tiempoTransicion = 1000; // Tiempo de duración de la transición en milisegundos
+            var $imagenes = $('.carousel-images li'); // Obtener todas las imágenes del carrusel
+            var cantidadImagenes = $imagenes.length;
+            var indiceImagenActual = 0;
+
+            // Función para cambiar de imagen
+            function cambiarImagen() {
+                // Ocultar imagen actual
+                $imagenes.eq(indiceImagenActual).removeClass('active');
+
+                // Calcular índice de la siguiente imagen
+                indiceImagenActual++;
+                if (indiceImagenActual >= cantidadImagenes) {
+                    indiceImagenActual = 0;
+                }
+
+                // Mostrar siguiente imagen
+                $imagenes.eq(indiceImagenActual).addClass('active');
+            }
+
+            // Iniciar carrusel
+            $imagenes.eq(indiceImagenActual).addClass('active');
+
+            // Manejar botones prev y next
+            $('.carousel-prev').click(function () {
+                // Ocultar imagen actual
+                $imagenes.eq(indiceImagenActual).removeClass('active');
+
+                // Calcular índice de la imagen anterior
+                indiceImagenActual--;
+                if (indiceImagenActual < 0) {
+                    indiceImagenActual = cantidadImagenes - 1;
+                }
+
+                // Mostrar imagen anterior
+                $imagenes.eq(indiceImagenActual).addClass('active');
+            });
+
+            $('.carousel-next').click(function () {
+                // Ocultar imagen actual
+                $imagenes.eq(indiceImagenActual).removeClass('active');
+
+                // Calcular índice de la siguiente imagen
+                indiceImagenActual++;
+                if (indiceImagenActual >= cantidadImagenes) {
+                    indiceImagenActual = 0;
+                }
+
+                // Mostrar siguiente imagen
+                $imagenes.eq(indiceImagenActual).addClass('active');
+            });
+
+            $(".seul").click(() => {
+                $("img").hide()
+                $("#Mseul").show()
+                $("#banner").show()
+                $("#Iseul").show()
+                $imagenes.eq(0).addClass('active');
+            })
+            $(".barcelona").click(() => {
+                $("img").hide()
+                $("#Mbarcelona").show()
+                $("#banner").show()
+                $("#Ibarcelona").show()
+                $imagenes.eq(1).addClass('active');
+            })
+            $(".atlanta").click(() => {
+                $("img").hide()
+                $("#Matlanta").show()
+                $("#banner").show()
+                $("#Iatlanta").show()
+                $imagenes.eq(2).addClass('active');
+            })
+            $(".sideny").click(() => {
+                $("img").hide()
+                $("#Msideny").show()
+                $("#banner").show()
+                $("#Isideny").show()
+                $imagenes.eq(3).addClass('active');
+            })
+            $(".atenas").click(() => {
+                $("img").hide()
+                $("#Matenas").show()
+                $("#banner").show()
+                $("#Iatenas").show()
+                $imagenes.eq(4).addClass('active');
+            })
+            $(".pekin").click(() => {
+                $("img").hide()
+                $("#Mpekin").show()
+                $("#banner").show()
+                $("#Ipekin").show()
+                $imagenes.eq(5).addClass('active');
+            })
+            $(".londres").click(() => {
+                $("img").hide()
+                $("#Mlondres").show()
+                $("#banner").show()
+                $("#Ilondres").show()
+                $imagenes.eq(6).addClass('active');
+            })
+            $(".rio").click(() => {
+                $("img").hide()
+                $("#Mrio").show()
+                $("#banner").show()
+                $("#Irio").show()
+                $imagenes.eq(7).addClass('active');
+            })
+            $("#todos").click(() => {
+                $("img").hide()
+                $("img").show()
+                $imagenes.eq(0).addClass('active');
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img id="banner" src="img/banner.jpg" alt="">
+        </header>
+
+        <div class="botones">
+            <button class="seul" id="seul">Seúl 1988</button>
+            <button class="barcelona" id="barcelona">Barcelona 1992</button>
+            <button class="atlanta" id="atlanta">Atlanta 1996</button>
+            <button class="sideny" id="sideny">Sídney 2000</button>
+            <button class="atenas" id="atenas">Atenas 2004</button>
+            <button class="pekin" id="pekin">Pekín 2008</button>
+            <button class="londres" id="londres">Londres 2012</button>
+            <button class="rio" id="rio">Rio 2016</button>
+
+        </div>
+
+        <div class="carousel">
+            <ul class="carousel-images">
+                <li><img id="Iseul" src="img/seul.jpeg"></li>
+                <li><img id="Ibarcelona" src="img/barcelona.jpeg"></li>
+                <li><img id="Iatlanta" src="img/atlanta.jpg"></li>
+                <li><img id="Isideny" src="img/sydney.jpeg"></li>
+                <li><img id="Iatenas" src="img/atenas.jpg"></li>
+                <li><img id="Ipekin" src="img/pekin.jpeg"></li>
+                <li><img id="Ilondres" src="img/londres.jpeg"></li>
+                <li><img id="Irio" src="img/rio.jpeg"></li>
+            </ul>
+            <button class="carousel-prev">Anterior</button>
+            <button class="carousel-next">Siguiente</button>
+        </div>
+
+        <div id="mini">
+            <img class="miniatura seul" id="Mseul" src="img/seul.jpeg" alt="">
+            <img class="miniatura barcelona" id="Mbarcelona" src="img/barcelona.jpeg" alt="">
+            <img class="miniatura atlanta" id="Matlanta" src="img/atlanta.jpg" alt="">
+            <img class="miniatura sideny" id="Msideny" src="img/sydney.jpeg" alt="">
+            <img class="miniatura atenas" id="Matenas" src="img/atenas.jpg" alt="">
+            <img class="miniatura pekin" id="Mpekin" src="img/pekin.jpeg" alt="">
+            <img class="miniatura londres" id="Mlondres" src="img/londres.jpeg" alt="">
+            <img class="miniatura rio" id="Mrio" src="img/rio.jpeg" alt="">
+        </div>
+        <footer>Desarrollado por Sergio</footer>
+    </div>
+</body>
+
+</html>

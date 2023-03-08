@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="lightslider-master/dist/css/lightslider.min.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="lightslider-master/dist/js/lightslider.min.js"></script>
+    <style>
+        ul, li {
+        margin:0;
+        padding:0;
+        list-style:none
+        }
+        </style>
+    <title>Document</title>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('#lightSlider').lightSlider({
+        gallery:true,
+        minSlide:1,
+        maxSlide:1,
+        auto:true    
+        }); 
+        });
+        </script>
+        
+</head>
+<body>
+    <ul id="lightSlider" class="gallery">
+        <li data-thumb="img/atenas.png"><img src="img/atenas.png" /> </a> </li>
+        <li data-thumb="img/atlanta.png"><img src="img/atlanta.png" /> </a> </li>
+        <li data-thumb="img/barcelona.png"><img src="img/barcelona.png" /> </a> </li>
+        </ul>
+        
+</body>
+</html>
